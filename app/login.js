@@ -16,6 +16,10 @@ app.controller('loginCtrl', function($scope, $mdToast, $timeout, $q, $log, $http
       });
       return deferred.promise;
     };
+    $scope.clean = function(){
+      $scope.login.username = "";
+      $scope.login.password = "";
+    }
     $scope.closeToast = function() {
       $mdToast.hide();
     };
