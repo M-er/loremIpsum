@@ -5,7 +5,7 @@ function init(){
 	$.ajax({
 		type: "get",
 		data: {},
-		url: "./api/checkusuario",
+		url: "./api/session/",
 		dataType: 'json',
 		cache: false,
 		success: function(datos, textStatus, jqXHR) {
@@ -28,10 +28,10 @@ function salir(){
 	$.ajax({
 		type: 'GET',
 		url: "./api/logout",
-		dataType: "json", 
+		dataType: "json",
 		success:  function(data, textStatus, jqXHR){
 			window.location.replace("../index.html");
 		}
 	});
-	
+
 }

@@ -11,36 +11,12 @@ $container['logger'] = function ($c) {
 	}
 	return $logger;
 };
-$container['saludador'] = function ($c) {
-	$saludador = new App\Saludador($c['logger']);
-	return $saludador;
-};
-//SESSION WRITE CLOSE!!!!
-$container['sessionador'] = function ($c) {
-	$session = new App\Session($c['logger']);
-	return $session;
-};
-$container['logueador'] = function ($c) {
-	$loguea = new App\Login($c['logger']);
-	return $loguea;
-};
-$container['usuario'] = function ($c) {
-	$user = new App\User($c['logger']);
-	return $user;
-};
-$container['usuarios'] = function ($c) {
-	$users = new App\UserMapper($c['logger']);
-	return $users;
-};
-$container['producto'] = function ($c) {
-	$product = new App\Product($c['logger']);
-	return $product;
-};
-$container['productos'] = function ($c) {
-	$products = new App\ProductMapper($c['logger']);
-	return $products;
-};
-$container['institucional'] = function ($c) {
-	$institucional = new App\InstitucionalMapper($c['logger']);
-	return $institucional;
-};
+$container['encriptador'] = function ($c) {$loguea = new App\PasswordHash($c['logger']);return $loguea;};
+$container['saludador'] = function ($c) {$saludador = new App\Saludador($c['logger']);return $saludador;};
+$container['sessionador'] = function ($c) {$session = new App\Session($c['logger']);return $session;};
+$container['logueador'] = function ($c) {$loguea = new App\Login($c['logger']);return $loguea;};
+$container['usuario'] = function ($c) {$user = new App\User($c['logger']);return $user;};
+$container['usuarios'] = function ($c) {$users = new App\UserMapper($c['logger']);return $users;};
+$container['producto'] = function ($c) {$product = new App\Product($c['logger']);return $product;};
+$container['productos'] = function ($c) {$products = new App\ProductMapper($c['logger']);return $products;};
+$container['institucional'] = function ($c) {$institucional = new App\InstitucionalMapper($c['logger']);return $institucional;};
