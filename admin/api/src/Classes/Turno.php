@@ -24,4 +24,5 @@ class Turno{
 		$rta['status'] = 'success';
 		return $response->withJson($rta);
 	}
+}
 ?>
