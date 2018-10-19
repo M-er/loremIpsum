@@ -1,0 +1,9 @@
+.md-toast-success .md-toast-content{
+    background: #00a855 !important;
+}
+.md-toast-warning .md-toast-content{
+    background: #FFCA3A !important;
+}
+.md-toast-error .md-toast-content{
+    background: #FF595E !important;
+}

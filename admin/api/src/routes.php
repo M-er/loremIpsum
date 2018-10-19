@@ -24,5 +24,5 @@ $app->get('/usuarios/all', "usuarios:getAll");
 $app->get('/producto/{{id}}', "producto:getOne");
 $app->get('/productos/all', "productos:getAll");
 $app->get('/acciones/all', "logueador:getAcc");
-$app->get('/institucional/all', "institucional:getAll");
+$app->get('/turnos/propios', "turno:getMine");
 $app->get('/session/', "sessionador:getSession");

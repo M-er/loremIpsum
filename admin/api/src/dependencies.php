@@ -20,3 +20,5 @@ $container['usuarios'] = function ($c) {$users = new App\UserMapper($c['logger']
 $container['producto'] = function ($c) {$product = new App\Product($c['logger']);return $product;};
 $container['productos'] = function ($c) {$products = new App\ProductMapper($c['logger']);return $products;};
 $container['institucional'] = function ($c) {$institucional = new App\InstitucionalMapper($c['logger']);return $institucional;};
+$container['turnero'] = function ($c) {$turnos = new App\TurnosMapper($c['logger']);return $turnos;};
+$container['turno'] = function ($c) {$turnos = new App\Turno($c['logger']);return $turnos;};

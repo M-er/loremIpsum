@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="misTurnosApp">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Turnero Generico</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../assets/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="./assets/vendors/iconfonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/generales.css">
+  <!-- AngularMaterial CSS-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+</head>
+<body>
+  <div class="container-scroller">
+    <div id="nav"></div>
+    <div class="container-fluid page-body-wrapper">
+      <div id="side"></div>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div ng-controller="misTurnosCtrl" ng-init="init()" class="card-body">
+                  <h4 class="card-title">Turnos tomados</h4>
+                  <div ng-repeat="turno in turnos">
+                    <div class="row">
+                      <div class="col-2 text-right">
+                        <h1 class="display-4"><span class="badge badge-secondary">{{turno.fechaDiaN}}</span></h1>
+                        <h2>{{turno.fechaMes}}</h2>
+                      </div>
+                      <div class="col-10">
+                        <h3 class="text-uppercase"><strong>{{turno.actividad}} - {{turno.lugar}}</strong></h3>
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{turno.fechaDia}}</li>
+                          <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{turno.horario}}</li>
+                          <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Gym fuego interno</li>
+                        </ul>
+                        <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="./assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="./assets/js/off-canvas.js"></script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <script src="./assets/js/util.js"></script>
+  <script src="./app/misTurnos.js"></script>
+</body>
+</html>

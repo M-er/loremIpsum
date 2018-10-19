@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="turnoApp">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Turnero Generico</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../assets/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/generales.css">
+
+  <!-- AngularMaterial CSS-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+</head>
+<body>
+  <div class="container-scroller">
+    <div id="nav"></div>
+    <div class="container-fluid page-body-wrapper">
+      <div id="side"></div>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div ng-controller="turnoCtrl" ng-init="init()" class="card-body">
+                  <h4 class="card-title">Registro de turno</h4>
+                  <form class="form-sample">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <md-card-content>
+                            <div layout="row" layout-align="space-between center">
+                              <span>Que tipo de actividad?</span>
+                              <md-select ng-model="turno.actividad" placeholder="Actividad" class="md-no-underline">
+                                <md-option value="crossfit">Crossfit</md-option>
+                                <md-option value="funcional">Funcional</md-option>
+                              </md-select>
+                            </div>
+                            <div layout="row" layout-align="space-between center">
+                              <span>Que turno ?</span>
+                              <md-select ng-model="turno.turno" placeholder="Turno" class="md-no-underline">
+                                <md-option value="1">Mañana</md-option>
+                                <md-option value="2">Tarde</md-option>
+                                <md-option value="3">Noche</md-option>
+                              </md-select>
+                            </div>
+                          </md-card-content>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <md-card-content>
+                            <div layout="row" layout-align="space-between center">
+                              <span>A que horario?</span>
+                              <md-select ng-model="turno.horario" placeholder="Horario" class="md-no-underline">
+                                <md-option value="1430">14.30 hs</md-option>
+                                <md-option value="1500">15.00 hs</md-option>
+                                <md-option value="1530">15.30 hs</md-option>
+                                <md-option value="1600">16.00 hs</md-option>
+                              </md-select>
+                            </div>
+                            <div layout="row" layout-align="space-between center">
+                              <span>Que dia?</span>
+                              <md-datepicker ng-model="turno.fecha" md-placeholder="Fecha" md-min-date="turno.minDate" md-max-date="turno.maxDate"  md-date-filter="turno.restriccionesFecha"></md-datepicker>
+                            </div>
+                          </md-card-content>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4"></div>
+                      <div class="col-sm-2">
+                        <button type="button" ng-click="guardar()" class="btn btn-success btn-fw"><i class="mdi mdi-file-document"></i>Guardar</button>
+                      </div>
+                      <div class="col-sm-2">
+                        <button type="button" ng-click="clean()" class="btn btn-warning btn-fw"><i class="mdi mdi-refresh"></i>Limpiar</button>
+                      </div>
+                      <div class="col-sm-4"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="./assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="./assets/js/off-canvas.js"></script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <script src="./assets/js/misc.js"></script>
+  <script src="./assets/js/util.js"></script>
+  <script src="./app/turnos.js"></script>
+
+</body>
+</html>
