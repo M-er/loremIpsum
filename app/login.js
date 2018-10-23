@@ -1,4 +1,38 @@
 var app = angular.module('loginApp', ['ngMaterial']);
+app.controller('turnoCtrl', function($scope, $timeout, $q, $log, $http, $mdToast) {
+  $scope.turno = {};
+  this.myDate = new Date();
+  this.minDate = new Date(this.myDate.getFullYear(),this.myDate.getMonth() - 2,this.myDate.getDate()  );
+  this.maxDate = new Date(this.myDate.getFullYear(),this.myDate.getMonth() + 2,this.myDate.getDate());
+  this.restriccionesFecha = function(date) {
+    var day = date.getDay();
+    return day != 0 || day != 6;
+  };
+  $scope.clean = function(){
+    $scope.turno = {};
+  }
+  $scope.guardar = function(){
+    console.log("guardando: ");
+    console.dir($scope.turno);
+    $scope.tostado("Turno guardado, anda a entrenar", "success");
+  }
+  $scope.init = function() {
+    console.log("Turnero APP");
+  };
+  $scope.closeToast = function() {
+    $mdToast.hide();
+  };
+  $scope.tostado = function(texto,tipo) {
+    $mdToast.show(
+      $mdToast.simple()
+      .toastClass('md-toast-'+tipo)
+      .textContent(texto)
+      .position('bottom left')
+      .hideDelay(3000)
+    );
+  };
+})
+
 app.controller('loginCtrl', function($scope, $mdToast, $timeout, $q, $log, $http, $window) {
   $scope.doLogin = function(usuario) {
     var deferred;
