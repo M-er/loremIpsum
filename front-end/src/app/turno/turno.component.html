@@ -1,69 +1,67 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Reserve su turno</mat-card-title>
-    <mat-card-subtitle>ahora mismo</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="row">
-      <div class="col">
-        <div class="col-sm-6 float-left">
-          <span>Seleccione el tipo de actividad</span>
-        </div>
-        <div class="col-sm-6 float-right">
-          <mat-form-field>
-            <mat-select placeholder="Actividad">
-              <mat-option value="crossfit">Crossfit</mat-option>
-              <mat-option value="funcional">Funcional</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col">
-        <div class="col-sm-6 float-left">
-          <span>Seleccione el turno deseado</span>
-        </div>
-        <div class="col-sm-6 float-right">
-          <mat-form-field>
-            <mat-select placeholder="Turno">
-              <mat-option value="maniana">Mañana</mat-option>
-              <mat-option value="tarde">Tarde</mat-option>
-              <mat-option value="noche">Noche</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
+<div class="row mt-5 mb-5">
+  <h2>Reserve su turno ahora</h2>
+</div>
+<div id="turno" class="row">
+  <div class="col">
+    <div class="col-sm-6 float-left">
+      <span>Seleccione el tipo de actividad</span>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="col-sm-6 float-left">
-          <span>Seleccione el horario</span>
-        </div>
-        <div class="col-sm-6 float-right">
-          <mat-form-field>
-            <mat-select placeholder="Horario">
-              <mat-option value="1300">13.00</mat-option>
-              <mat-option value="1730">17.30</mat-option>
-              <mat-option value="2200">22.00</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col">
-        <div class="col-sm-6 float-left">
-          <span>Seleccione la fecha</span>
-        </div>
-        <div class="col-sm-6 float-right">
-          <mat-form-field class="example-full-width">
-            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Fecha">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker touchUi #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
-      </div>
+    <div class="col-sm-6 float-right">
+      <mat-form-field>
+        <mat-select placeholder="Actividad">
+          <mat-option value="crossfit">Crossfit</mat-option>
+          <mat-option value="funcional">Funcional</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="guardar()" color="primary">Guardar</button>
-    <button mat-raised-button (click)="clean()" color="warn">Limpiar</button>
-  </mat-card-actions>
-</mat-card>
+  </div>
+  <div class="col">
+    <div class="col-sm-6 float-left">
+      <span>Seleccione el turno deseado</span>
+    </div>
+    <div class="col-sm-6 float-right">
+      <mat-form-field>
+        <mat-select placeholder="Turno">
+          <mat-option value="maniana">Mañana</mat-option>
+          <mat-option value="tarde">Tarde</mat-option>
+          <mat-option value="noche">Noche</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="col-sm-6 float-left">
+      <span>Seleccione el horario</span>
+    </div>
+    <div class="col-sm-6 float-right">
+      <mat-form-field>
+        <mat-select placeholder="Horario">
+          <mat-option value="1300">13.00</mat-option>
+          <mat-option value="1730">17.30</mat-option>
+          <mat-option value="2200">22.00</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col">
+    <div class="col-sm-6 float-left">
+      <span>Seleccione la fecha</span>
+    </div>
+    <div class="col-sm-6 float-right">
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <button mat-raised-button (click)="guardar()" color="primary">Guardar</button>
+  <button mat-raised-button (click)="clean()" color="warn">Limpiar</button>
+</div>
+<div class="row mt-5 mb-5">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
