@@ -1,14 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ContactoComponent } from './contacto/contacto.component';
+import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { TurnoComponent } from './turno/turno.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { InicioComponent } from './inicio/inicio.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* Mat */
 import {MatCardModule} from '@angular/material/card';
 import {MatNativeDateModule} from '@angular/material';
@@ -32,11 +34,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     InicioComponent
   ],
   imports: [
+    FormsModule,
     MatCardModule,
     BrowserModule,
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    HttpClientModule,
     AppRoutingModule,
     MatToolbarModule,
     MatSnackBarModule,
