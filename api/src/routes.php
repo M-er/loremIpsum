@@ -15,6 +15,7 @@ use Slim\Http\Response;
  */
 $app->get('/hello/{name}', "saludador:hola");
 //$app->get('/encripta/{psw}', "encriptador:encrypt");
+$app->post('/codigo/', "maileador:mail");
 $app->post('/login/', "logueador:login");
 $app->post('/usuario/s', "usuario:save");
 $app->delete('/usuarios/delete/{iduser}', "usuario:delete");
